@@ -149,9 +149,9 @@
     introCarouselIndicators.append("<li data-target='#introCarousel' data-slide-to='" + index + "'></li>");
 
 	/* Below code will merge the divs with .carousel-background with its parent
+	*/
     $(this).css("background-image", "url('" + $(this).children('.carousel-background').children('img').attr('src') +"')");
     $(this).children('.carousel-background').remove();
-	*/
   });
 
   $(".carousel").swipe({
