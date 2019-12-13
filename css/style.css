@@ -175,13 +175,13 @@ h6 {
 #intro {
   display: table;
   width: 100%;
-  height: 60vh;
+  height: 100vh;
   background: #000;
 }
 
 #intro .carousel-item {
     width: 100%;
-    height: 60vh;
+    height: 100vh;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -233,7 +233,7 @@ h6 {
 
 .special {
     position: absolute;
-    top: 30vh;
+    top: 50vh;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
@@ -245,8 +245,8 @@ h6 {
 }
 
 .headshot img {
-    width: 20%;
-    height: 20%;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
     margin-bottom: 30px;
 }
@@ -331,6 +331,16 @@ h6 {
 #intro .btn-get-started:hover {
   background: #fff;
   color: #18d26e;
+}
+
+@media (min-width: 1024px) {
+    #intro, #intro .carousel-item {
+        height: 60vh;
+    }
+
+    .special {
+        top: 30vh;
+    }
 }
 
 /*--------------------------------------------------------------
