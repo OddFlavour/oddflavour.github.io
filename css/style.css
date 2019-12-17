@@ -71,7 +71,7 @@ h6 {
 
 /* Prelaoder */
 
-#preloader {
+/*#preloader {
   position: fixed;
   top: 0;
   left: 0;
@@ -118,7 +118,7 @@ h6 {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
   }
-}
+}*/
 
 /*--------------------------------------------------------------
 # Header
@@ -168,6 +168,20 @@ h6 {
   margin: 0;
 }
 
+.icon-container {
+    transition: 0.3s ease-in;
+    margin: 5px;
+}
+
+.icon-container:hover {
+    opacity: 0.5;
+}
+
+.icon {
+    height: 40px;
+    width: 40px;
+}
+
 /*--------------------------------------------------------------
 # Intro Section
 --------------------------------------------------------------*/
@@ -175,20 +189,20 @@ h6 {
 #intro {
   display: table;
   width: 100%;
-  height: 100vh;
+  /*height: 100vh;*/
   background: #000;
 }
 
 #intro .carousel-item {
     width: 100%;
-    height: 100vh;
+    height: 700px;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     max-width: 100%;
     /* Add additional effect */
-    filter: blur(5px);
-    -webkit-filter: blur(5px);
+    filter: blur(2px);
+    -webkit-filter: blur(2px);
 }
 
 #intro .carousel-item::before {
@@ -201,9 +215,10 @@ h6 {
   right: 0;
   left: 0;
   bottom: 0;
+  z-index: 1;
 }
 
-#intro .carousel-container {
+/*#intro .carousel-container {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -221,23 +236,43 @@ h6 {
   top: 0;
   left: 0;
   right: 0;
+}*/
+
+/* This is so that any sub-elements using 'position: absolute' will recognize it as parent*/
+#intro .carousel-background {
+    position: relative;
 }
 
-/*
-    Don't think this ever gets applied, since the .js file
-    merges .carousel-background with .carousel-item
-*/
 #intro .carousel-background img {
-    max-width: 100%;
+    width: 100%;
+}
+
+#intro .carousel-background .carousel-sizing-dummy {
+    position: relative;
+    visibility: hidden;
+}
+
+#intro .carousel-background .carousel-actual-img {
+    /*position: absolute;
+    top: -20%;
+    background-repeat: no-repeat;
+    background-size: cover;*/
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .special {
     position: absolute;
-    top: 50vh;
+    /*top: 50%;*/
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, 0%);
     text-align: center;
     z-index: 10;
+    margin: 100px 0 100px 0;
 }
 
 .special p {
@@ -246,8 +281,8 @@ h6 {
 }
 
 .headshot img {
-    width: 200px;
-    height: 200px;
+    width: 240px;
+    height: 240px;
     border-radius: 50%;
     margin-bottom: 30px;
 }
@@ -273,7 +308,7 @@ h6 {
   overflow: hidden;
 }
 
-#intro .carousel-fade .carousel-inner .carousel-item {
+/*#intro .carousel-fade .carousel-inner .carousel-item {
   transition-property: opacity;
 }
 
@@ -297,7 +332,7 @@ h6 {
   left: 0;
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
-}
+}*/
 
 #intro .carousel-control-prev,
 #intro .carousel-control-next {
@@ -313,25 +348,6 @@ h6 {
 
 #intro .carousel-indicators li {
   cursor: pointer;
-}
-
-#intro .btn-get-started {
-  font-family: "Montserrat", sans-serif;
-  font-weight: 500;
-  font-size: 16px;
-  letter-spacing: 1px;
-  display: inline-block;
-  padding: 8px 32px;
-  border-radius: 50px;
-  transition: 0.5s;
-  margin: 10px;
-  color: #fff;
-  background: #18d26e;
-}
-
-#intro .btn-get-started:hover {
-  background: #fff;
-  color: #18d26e;
 }
 
 /*--------------------------------------------------------------
@@ -1196,9 +1212,6 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 @media (min-width: 992px) {
-  #testimonials .testimonial-item p {
-    width: 80%;
-  }
 }
 
 @media (min-width: 1024px) {
@@ -1242,12 +1255,16 @@ body.mobile-nav-active #mobile-nav-toggle {
   }
 }
 
-@media (min-width: 1024px) {
-    #intro, #intro .carousel-item {
-        height: 60vh;
+@media (max-width: 1024px) {
+    .headshot img {
+        width: 200px;
+        height: 200px;
     }
+}
 
-    .special {
-        top: 30vh;
+@media (min-width: 1024px) and (max-width: 1200px) {
+    .headshot img {
+        width: 20vw;
+        height: 20vw;
     }
 }
