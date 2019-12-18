@@ -267,24 +267,26 @@ h6 {
 
 .special {
     position: absolute;
-    /*top: 50%;*/
+    top: 50%;
     left: 50%;
-    transform: translate(-50%, 0%);
+    transform: translate(-50%, -50%);
     text-align: center;
     z-index: 10;
-    margin: 100px 0 100px 0;
 }
 
 .special p {
-    display: inline-block;
+    /*display: inline-block;*/
     color: grey !important;
+}
+
+.headshot {
+    margin-bottom: 30px;
 }
 
 .headshot img {
     width: 240px;
     height: 240px;
     border-radius: 50%;
-    margin-bottom: 30px;
 }
 
 #intro .carousel-content {
@@ -1255,10 +1257,18 @@ body.mobile-nav-active #mobile-nav-toggle {
   }
 }
 
+@media (max-height: 576px) {
+
+}
+
 @media (max-width: 1024px) {
     .headshot img {
         width: 200px;
         height: 200px;
+    }
+
+    #intro .carousel-item {
+        height: 100vh;
     }
 }
 
